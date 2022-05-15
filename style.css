@@ -1,0 +1,492 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+		left:0;
+		right: 0;
+}
+
+.container .navbar{
+    width: 100%;
+    height: 80px;
+    background-color: rgba(228, 20, 20, 0.699);
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar .logo{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.navbar .logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #f3f3f3;
+}
+
+.navbar ul{
+    float: right;
+    margin-right: 20px;
+}
+
+.navbar ul li{
+    list-style: none;
+    display:inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px 13px;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background: #ffffff;
+    color: black;
+    border-radius: 2px;
+}
+
+.anahat{
+    width: 1050px; height: auto; margin: 110px auto;
+    justify-content: space-around;
+}
+.galeri{
+    background-color: red;
+    width: 820px;
+    height: 370px;
+    float: left;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slides{
+    padding: 0;
+    width: 820px;
+    height: 370px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.slides *{
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+.slides input{display: none;}
+.slide-container{display: block;}
+
+.slide{
+    top: 0;
+    opacity: 0;
+    width: 820px;
+    height: 370px;
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: all .7s ease-in-out;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+.nav label{
+    width: 200px;
+    height: 100px;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opactiy .2s;
+    color: #fff;
+    font-size: 156px;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+.slide:hover + .nav label{opacity: 0.5;}
+.nav label:hover{opacity: 1;}
+.nav .next{right: 0;}
+
+input:checked + .slide-container .slide{
+    opacity: 1;
+    transform: scale(1);
+    transition: opactiy 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label{display: block;}
+
+.nav-dots{
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+.nav-dots .nav-dot{
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.nav-dots .nav-dor:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-1:checked ~ .nav-dots label#img-dot-2,
+input#img-1:checked ~ .nav-dots label#img-dot-3,
+input#img-1:checked ~ .nav-dots label#img-dot-4,
+input#img-1:checked ~ .nav-dots label#img-dot-5,
+input#img-1:checked ~ .nav-dots label#img-dot-6,
+input#img-1:checked ~ .nav-dots label#img-dot-7,
+input#img-1:checked ~ .nav-dots label#img-dot-8{
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.list{
+    width: 200px;
+    height: 370px;
+    margin-left: 850px;
+    background: url(image/reklam.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.haberler{
+    width: 1050px; height: 480px; margin-top: 65px; margin: auto;
+}
+
+.haberler .haber1{
+    width: 240px; height: 260px; margin-top: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber1 .r1{
+    background: url("image/hirsiz.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber1 a{
+    text-align:center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+
+.haberler .haber2{
+    width: 240px; height: 260px; margin-top: 30px; margin-left: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber2 .r2{
+    background: url("image/hapishane.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber2 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber3{
+    width: 240px; height: 260px; margin-top: 30px; margin-left: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber3 .r3{
+    background: url("image/okul.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber3 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber4{
+    width: 240px; height: 260px; margin-top: 30px; margin-left: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber4 .r4{
+    background: url("image/okulkavgasi.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber4 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber5{
+    width: 240px; height: 260px; margin-bottom: 30px; margin-top: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber5 .r5{
+    background: url("image/zincirlemekaza.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber5 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber6{
+    width: 240px; height: 260px; margin-bottom: 30px; margin-top: 30px; margin-left: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber6 .r6{
+    background: url("image/canikoca.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber6 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber7{
+    width: 240px; height: 260px; margin-top: 30px; margin-bottom: 30px; margin-left: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber7 .r7{
+    background: url("image/banka.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber7 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+.haberler .haber8{
+    width: 240px; height: 260px; margin-top: 30px; margin-left: 30px; margin-bottom: 30px; float: left; border-radius: 10px;
+    background-position: bottom;
+    background-color: rgb(211,211,211);
+}
+.haber8 .r8{
+    background: url("image/mac.jpg");
+    width: 100%;height: 150px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.haber8 a{
+    text-align:left;
+    margin-top: 190px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    
+}
+
+.alt_alan{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30vh;
+    background-color: #171717;
+    color: white;
+    margin-top: 30px;
+}
+.alt_alan .icerik{
+    width: 33%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: justify;
+    margin: auto;
+}
+.alt_alan .icerik .logo{
+    display: inline-block;
+    margin-left: 120px;
+    margin-top: 20px;
+}
+.alt_alan .icerik .logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #f3f3f3;
+}
+.alt_alan ul{
+    float: right;
+    margin-right: 20px;
+}
+
+.alt_alan ul li{
+    list-style: none;
+    display:inline-block;
+    line-height: 80px;
+}
+.alt_alan ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 3px;
+}
+
+.alt_alan ul li a.active,
+.alt_alan ul li a:hover{
+    background: #ffffff;
+    color: black;
+    border-radius: 2px;
+}
+
+
+/* haber style */
+.haber_container{
+    width: 1050px; height: auto; margin: 110px auto;
+}
+
+.haber_container .haber{
+    width: 700px; height: auto;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.haber h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.haber p{
+    font-size: 20px;
+    margin-top: 30px;
+    color: black;
+}
+.haber h2{
+    margin-top: 30px;
+    font-size: 30px;
+}
+.haber_container .reklam{
+    width: 300px; height: 600px;
+    background: url(image/reklam.png);
+    margin-left: 750px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.orta{
+    width: 1050px; height: auto; margin: 110px auto; margin-top: 500px;
+}
+.orta h1{
+    text-align: center;
+}
